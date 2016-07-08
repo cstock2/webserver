@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+    <script src="user-detailController.js"></script>
+</head>
+<body>
+<div ng-controller = "UserDetailController">
+    <div>
+        <div class = "detail-name">{{user.first_name}} {{user.last_name}}</div>
+        <div class = "detail-section">Location : <span class = "detail-basic">{{user.location}}</span><p></p></div>
+        <div class = "detail-section">Occupation : <span class = "detail-basic">{{user.occupation}}</span><p></p></div>
+        <div class = "detail-section">Description : <span class = "detail-basic">{{user.description}}</span><p></p></div>
+        <a ng-href = "#/photos/{{user.id}}">{{user.first_name}} {{user.last_name}}'s photos</a>
+        <div class = "photo-basic" ng-if="mostRecent.file_name">
+            <div>Most recent photo</div>
+            <a ng-href = "#/photos/{{user.id}}"><img ng-src = "images/{{mostRecent.file_name}}" class = "photo-thumbnail"></a>
+        </div>
+        <div class = "photo-basic" ng-if="mostCommented.comments">
+            <div>Most commented photo with {{mostCommented.comments.length}} {{commentText}}</div>
+            <a ng-href = "#/photos/{{user.id}}"><img ng-src = "images/{{mostCommented.file_name}}" class = "photo-thumbnail"></a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
