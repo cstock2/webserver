@@ -1,0 +1,18 @@
+.register-input{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+    border: solid 1px blue;
+    font: 10px Tahoma;
+}
+
+.register-login{
+    margin: 5px;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+.register-bad{
+    font: 20px Tahoma;
+    color: red;
+}

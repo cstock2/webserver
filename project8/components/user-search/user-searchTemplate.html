@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head>
+    <script src="user-searchController.js"></script>
+</head>
+<body>
+<div ng-controller = "UserSearchController">
+    <h1 class = "main.centered">Search results for {{search.searchId}}</h1>
+    <div ng-repeat="x in photoArray" class = "photo-basic">
+        <a ng-href = "#/photos/{{x.userItem.id}}"><img ng-src = "images/{{x.file_name}}" class = "photo-thumbnail"></a>
+        <div><span class = "photo-bold">Photo created by :</span> <a ng-href = "#/users/{{x.userItem.id}}">{{x.userItem.first_name}} {{x.userItem.last_name}}</a></div>
+        <div><a ng-href = "#/users/{{x.comment.user.id}}">{{x.comment.user.first_name}} {{x.comment.user.last_name}}</a>: {{x.comment.comment}}</div>
+    </div>
+</div>
+</body>
+</html>

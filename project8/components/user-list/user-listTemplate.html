@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+<head>
+    <script src="user-listController.js"></script>
+</head>
+<body>
+    <div ng-controller = "UserListController">
+        <div ng-repeat = "x in users">
+            <a ng-href ="#/users/{{x.id}}">{{x.first_name}} {{x.last_name}}</a> ({{x.activity}})
+        </div>
+    </div>
+</body>
+</html>

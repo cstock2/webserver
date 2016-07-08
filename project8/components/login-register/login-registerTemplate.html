@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+    <script src="login-registerController.js"></script>
+</head>
+<body>
+<div ng-controller = "LoginRegisterController">
+    <div>
+        <div ng-if="!isCurrentUser()" class = "register-login">
+            <h1>Please Login!</h1>
+            <div><input type = "text"  placeholder = "Enter a username" ng-model = "login.login_name" class = "register-input"></div>
+            <div><input type = "text" placeholder = "Enter a password" ng-model = "login.password" class = "register-input"></div>
+            <div><button ng-click = "submit()">Login</button></div>
+            <div ng-if = "main.hasLoginAttempt" class = "register-bad">{{login.falser}}</div>
+        </div>
+        <div ng-if="!isCurrentUser()" class = "register-login">
+            <h1>Or register a new user!</h1>
+            <div>Username <input type = "text" placeholder = "Enter a username" ng-model = "newuser.login_name" class = "register-input"></div>
+            <div>First Name: <input type = "text" placeholder = "Enter your first name" ng-model = "newuser.first_name" class = "register-input"></div>
+            <div>Last Name: <input type ="text" placeholder="Enter your last name" ng-model = "newuser.last_name" class = "register-input"></div>
+            <div>Location: <input type ="text" placeholder="Where are you currently?" ng-model = "newuser.location" class = "register-input"></div>
+            <div>Occupation: <input type="text" placeholder="What is your occupation?" ng-model="newuser.occupation" class = "register-input"></div>
+            <div>Description: <input type="text" placeholder="Tell us about yourself" ng-model="newuser.description" class = "register-input"></div>
+            <div>Password: <input type="text" placeholder="Enter a password" ng-model="newuser.password" class = "register-input"></div>
+            <div><button ng-click="register()">Register</button></div>
+            <div ng-if="failedToRegister()" class = "register-bad">Please fill in all fields!</div>
+        </div>
+        <div ng-if="isCurrentUser()">
+            <h1>Welcome {{main.loggedIn}}</h1>
+        </div>
+    </div>
+</div>
+</body>
+</html>

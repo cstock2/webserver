@@ -1,0 +1,15 @@
+.detail-name{
+    text-align: center;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+.detail-section{
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.detail-basic{
+    font-weight: normal;
+    font-size: 16px;
+}
